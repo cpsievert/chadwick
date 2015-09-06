@@ -1,0 +1,9 @@
+Package: chadwick
+Title: Wrappers around chadwick utility
+Version: 0.0.0.9000
+Authors@R: "Carson Sievert <cpsievert1@gmail.com> [aut, cre]"
+Description: Wrappers around chadwick utility
+Depends: R (>= 3.2.1)
+Imports: dplyr
+License: MIT + file LICENSE
+LazyData: true
