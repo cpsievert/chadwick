@@ -4,6 +4,7 @@
 #'
 #' @param year The year to obtain event information
 #' @importFrom dplyr left_join
+#' @export
 #' @examples
 #'
 #' # acquire event data from 1960
@@ -45,7 +46,6 @@ cwevent <- function(year) {
   unzip(zipfile)
 
   # run the scripts
-  # TODO: provide the option to grab the extended fields??
   argz <- c("-y", year, "-f", "0-96", "-x", "0-62",
             paste0(year, "*.EV*"))
   te <- system2("cwevent", args = argz, stdout = TRUE)

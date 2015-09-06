@@ -13,8 +13,10 @@ cwevent(year)
 Extract detailed information about individual events.
 }
 \examples{
+# acquire event data from 1960
 df <- cwevent(1960)
-# add some player info
+
+# tack on batter's name
 data(players, package = "chadwick")
 library(dplyr)
 p <- players \%>\%
@@ -23,6 +25,7 @@ p <- players \%>\%
   select(Year, BAT_TEAM_ID, BAT_ID, Batter.Name)
 df2 <- left_join(df, p)
 
+# who had the most strikeouts in 1960?
 df2 \%>\%
   filter(EVENT_DES == "Strikeout") \%>\%
   count(Batter.Name) \%>\%
